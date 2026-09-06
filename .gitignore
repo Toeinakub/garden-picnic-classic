@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.venv/
+.design-backup/
+.playwright-mcp/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+# Original reference media are kept locally.
+images/
+*.mp4
+*.pdf
