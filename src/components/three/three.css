@@ -15,3 +15,15 @@
 .three-fallback {min-height:310px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:var(--cma-gold);font-size:12px;text-align:center}
 .three-fallback button {background:var(--cma-gold-bright);color:#142b21;padding:12px;border:0;border-radius:8px}
 @media(max-width:760px){.three-card{padding:20px 13px 16px}.three-canvas{height:320px}.three-heading>span:first-child{font-size:15px}}
+
+@media (max-width: 760px) {
+  .three-heading { flex-wrap: wrap; gap: 8px; }
+  .three-heading > span:first-child { font-size: 18px; }
+  .three-label { font-size: 11px; letter-spacing: 1px; }
+  .three-hint { font-size: 14px; line-height: 1.7; }
+  .three-controls { flex-wrap: wrap; }
+  .three-controls button { font-size: 14px; min-width: 42px; min-height: 44px; }
+  .three-summary { font-size: 15px; flex-wrap: wrap; line-height: 1.7; }
+  .three-summary > span:nth-of-type(2) { font-size: 12px; }
+  .three-fallback { font-size: 16px; line-height: 1.7; }
+}

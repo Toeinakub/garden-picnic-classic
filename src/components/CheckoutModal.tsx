@@ -94,7 +94,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         <div className="drawer-header">
           <div>
             <h3>{step === 'pay' ? 'ชำระเงินผ่าน Thai QR' : 'บัตรรับของขวัญ VIP'}</h3>
-            <p style={{ fontSize: '11.5px', color: '#d4af37' }}>
+            <p style={{ fontSize: 'max(11.5px, var(--sheet-text-min, 0px))', color: '#d4af37' }}>
               {step === 'pay' ? 'PromptPay Cashless Payment' : 'CMA Digital Picnic Token'}
             </p>
           </div>
@@ -105,7 +105,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
         {step === 'pay' ? (
           <div style={{ textAlign: 'center', padding: '10px 0' }}>
-            <p style={{ fontSize: '13px', color: '#aba28c' }}>
+            <p style={{ fontSize: 'max(13px, var(--sheet-text-min, 0px))', color: '#aba28c' }}>
               สแกน QR Code ด้วยแอปพลิเคชันธนาคารเพื่อยืนยันรายการ
             </p>
 
@@ -115,17 +115,17 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 <span>THAI QR PAYMENT</span>
               </div>
               <canvas ref={canvasRef} className="qr-canvas" />
-              <div style={{ fontSize: '10.5px', color: '#666', marginTop: '6px' }}>
+              <div style={{ fontSize: 'max(10.5px, var(--sheet-text-min, 0px))', color: '#666', marginTop: '6px' }}>
                 ชื่อบัญชี: วตท. สถาบันวิทยาการตลาดทุน
               </div>
             </div>
 
             <div style={{ margin: '12px 0 18px' }}>
-              <div style={{ fontSize: '12px', color: '#aba28c' }}>ยอดชำระสุทธิ</div>
+              <div style={{ fontSize: 'max(12px, var(--sheet-text-min, 0px))', color: '#aba28c' }}>ยอดชำระสุทธิ</div>
               <div style={{ fontFamily: 'var(--font-serif)', fontSize: '26px', fontWeight: 700, color: '#eec95d' }}>
                 ฿{totalPrice.toLocaleString()}
               </div>
-              <div style={{ fontSize: '11px', color: '#a3b899', marginTop: '4px' }}>
+              <div style={{ fontSize: 'max(11px, var(--sheet-text-min, 0px))', color: '#a3b899', marginTop: '4px' }}>
                 Ref: {orderRef}
               </div>
             </div>
@@ -154,26 +154,26 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', color: '#f8f5ee', marginBottom: '4px' }}>
               จัดตะกร้าผลไม้สำเร็จแล้ว
             </h4>
-            <p style={{ fontSize: '12px', color: '#aba28c', marginBottom: '14px' }}>
+            <p style={{ fontSize: 'max(12px, var(--sheet-text-min, 0px))', color: '#aba28c', marginBottom: '14px' }}>
               ข้อมูลบันทึกในระบบเรียบร้อย พร้อมจัดเตรียมสำหรับค่ำคืนปิกนิก
             </p>
 
             {/* VIP Ticket Card */}
             <div className="ticket-card">
               <div className="ticket-cma-header">CMA BACK TO BASIC</div>
-              <div style={{ fontSize: '11px', color: '#a3b899', letterSpacing: '1px' }}>
+              <div style={{ fontSize: 'max(11px, var(--sheet-text-min, 0px))', color: '#a3b899', letterSpacing: '1px' }}>
                 GARDEN PICNIC NIGHT • 24 SEP 2026
               </div>
 
               <div className="ticket-code">{orderRef}</div>
 
               {monogramText.trim() && (
-                <div style={{ fontSize: '13px', color: '#eec95d', fontWeight: 600, margin: '6px 0' }}>
+                <div style={{ fontSize: 'max(13px, var(--sheet-text-min, 0px))', color: '#eec95d', fontWeight: 600, margin: '6px 0' }}>
                   🏷️ ป้ายสลัก: {monogramText.toUpperCase()}
                 </div>
               )}
 
-              <div style={{ fontSize: '11.5px', color: '#e8e2d2', margin: '8px 0', lineHeight: 1.5 }}>
+              <div style={{ fontSize: 'max(11.5px, var(--sheet-text-min, 0px))', color: '#e8e2d2', margin: '8px 0', lineHeight: 1.5 }}>
                 {items.map(i => `${i.fruit.thaiName} (x${i.quantity})`).join(', ')}
               </div>
 
@@ -181,7 +181,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 marginTop: '10px',
                 paddingTop: '8px',
                 borderTop: '1px solid rgba(212, 175, 55, 0.2)',
-                fontSize: '11px',
+                fontSize: 'max(11px, var(--sheet-text-min, 0px))',
                 color: '#aba28c'
               }}>
                 📍 นำรหัสนี้มารับตะกร้า ณ จุด <strong>"The Garden Pantry"</strong> เวลา 22.00 น.

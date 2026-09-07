@@ -449,3 +449,65 @@ button:active { transform: scale(.96); }
 .view-mode-tabs button[aria-selected=true] {background:var(--cma-gold-bright);color:#142b21;}
 .three-loading {min-height:440px;display:grid;place-items:center;color:var(--cma-gold);border:1px solid var(--border-gold);border-radius:28px;font-size:13px;}
 @media(max-width:400px){.view-mode-tabs button{font-size:10px;padding:10px 13px;}}
+
+/* Mobile reading scale: readable copy, generous controls and room for Thai labels. */
+@media (max-width: 760px) {
+  .brand-title-group h1 { font-size: 21px; }
+  .brand-title-group p { font-size: 11px; line-height: 1.6; }
+  .cma-brand { gap: 9px; min-width: 0; }
+  .cma-logo-badge { flex-shrink: 0; }
+  .header-bar { margin-inline: 16px; gap: 10px; }
+  .header-actions { flex-shrink: 0; }
+  .event-tagline { font-size: 10px; letter-spacing: 1px; gap: 8px; }
+  .event-tagline span { width: 12px; flex-shrink: 0; }
+  .event-date { font-size: 11px; letter-spacing: .5px; line-height: 1.7; }
+  .event-subtext { font-size: 16px; line-height: 1.85; font-weight: 400; }
+  .stage-eyebrow, .section-eyebrow { font-size: 12px; letter-spacing: 1.1px; }
+  .stage-eyebrow { height: auto; min-height: 22px; }
+  .basket-caption > span:first-child { font-size: 16px; }
+  .basket-edition { font-size: 10px; }
+  .basket-status-label { font-size: 15px; line-height: 1.6; gap: 8px; }
+  .basket-count-badge { font-size: 12px; }
+  .basket-footnote { flex-wrap: wrap; font-size: 12px; line-height: 1.7; gap: 3px 10px; text-align: center; }
+  .basket-footnote span { font-size: 14px; }
+  .basket-preview-note { font-size: 12px; line-height: 1.8; }
+  .shelf-header { flex-wrap: wrap; align-items: flex-end; gap: 12px; }
+  .shelf-title-group h2 { font-size: 23px; line-height: 1.5; }
+  .shelf-title-group p { font-size: 14px; line-height: 1.7; }
+  .shelf-hint { margin-left: auto; }
+  .shelf-hint .icon-btn { width: 40px; height: 40px; }
+  .fruit-card { flex-basis: 224px; }
+  .fruit-img-box { height: 146px; }
+  .fruit-info { padding: 0 16px 16px; }
+  .fruit-badge-tag { font-size: 11px; line-height: 1.5; }
+  .fruit-name-thai { font-size: 16px; font-weight: 500; line-height: 1.65; min-height: 53px; }
+  .fruit-name-en { font-size: 14px; line-height: 1.6; min-height: 45px; }
+  .fruit-origin-row { font-size: 12px; line-height: 1.7; min-height: 41px; align-items: flex-start; }
+  .fruit-origin-row svg { width: 13px; height: 13px; margin-top: 4px; }
+  .fruit-price { font-size: 22px; }
+  .fruit-price small { font-size: 12px; max-width: 130px; line-height: 1.7; }
+  .fruit-card-count-badge { font-size: 13px; width: 30px; height: 30px; }
+  .add-basket-btn { width: 44px; height: 44px; }
+  .add-basket-btn svg { width: 18px; height: 18px; }
+  .view-mode-tabs { width: calc(100% - 32px); }
+  .view-mode-tabs button { font-size: 14px; padding: 10px 12px; flex: 1; line-height: 1.5; }
+  .experience-footer { font-size: 14px; line-height: 1.7; text-align: center; }
+  .floating-bottom-bar { flex-wrap: wrap; padding: 12px; gap: 10px; }
+  .floating-cart-info { flex: 1 0 105px; }
+  .cart-item-count { font-size: 12px; line-height: 1.6; }
+  .cart-total-qty { font-size: 26px; }
+  .view-basket-btn { font-size: 14px; min-height: 48px; flex: 1 0 185px; padding: 12px; gap: 7px; }
+  .drawer-sheet { --sheet-text-min: 14px; line-height: 1.7; }
+  .drawer-header h3 { font-size: 21px; line-height: 1.5; }
+  .drawer-item-row { flex-wrap: wrap; padding: 14px; }
+  .item-thumb-name { width: 100%; }
+  .item-thumb-img { width: 48px; height: 48px; flex-shrink: 0; }
+  .qty-control-group { margin-left: auto; gap: 10px; }
+  .qty-btn { width: 42px; height: 42px; }
+  .qty-num { font-size: 17px; }
+  .monogram-label { font-size: 14px; line-height: 1.7; align-items: flex-start; }
+  .monogram-label svg { flex-shrink: 0; margin-top: 5px; }
+  .monogram-input { font-size: 16px; padding: 12px; }
+  .checkout-btn { font-size: 16px; line-height: 1.6; min-height: 50px; }
+  .qr-logo-thai { font-size: 14px; }
+}
