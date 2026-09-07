@@ -1,5 +1,5 @@
 import React from 'react'
-import { Volume2, VolumeX, RotateCcw, Sprout } from 'lucide-react'
+import { Volume2, VolumeX, RotateCcw } from 'lucide-react'
 import { soundManager } from '../utils/audio'
 
 interface HeaderProps {
@@ -12,10 +12,8 @@ export const Header: React.FC<HeaderProps> = ({ isMuted, onToggleMute, onReset }
   return (
     <header className="header-bar">
       <div className="cma-brand">
-        <div className="cma-logo-badge"><Sprout size={18} strokeWidth={1.3} /><span>CMA</span></div>
         <div className="brand-title-group">
           <h1>Garden Pinic Night</h1>
-          <p>สถาบันวิทยาการตลาดทุน (วตท.)</p>
         </div>
       </div>
       <div className="header-actions">
