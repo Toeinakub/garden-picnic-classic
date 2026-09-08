@@ -113,3 +113,19 @@
 /* Preserve matching square coordinates for the basket rim and fruit layers. */
 .basket-visual-space {container-type:size;}
 .basket-inner-visual {width:min(100cqw,100cqh,360px);height:auto;aspect-ratio:1;}
+
+/* One summary row inside the basket card: count, total and the way in. */
+.basket-status-ribbon {display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #a8875a44;margin-top:auto;padding-top:8px;min-height:0;}
+.basket-status-ribbon .floating-cart-info {display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}
+.basket-status-ribbon .cart-item-count {font-size:12px;line-height:1.5;color:#5b5136;}
+.basket-status-ribbon .cart-total-qty {font-size:22px;line-height:1.25;color:#254e3b;}
+.basket-status-ribbon .view-basket-btn {flex:0 0 auto;width:auto;min-height:44px;padding:10px 16px;font-size:14px;}
+@media(max-width:350px) {
+  .basket-status-ribbon .cart-total-qty {font-size:19px;}
+  .basket-status-ribbon .view-basket-btn {padding:10px 12px;font-size:13px;}
+}
+@media(max-height:650px) {
+  .basket-status-ribbon {padding-top:6px;}
+  .basket-status-ribbon .cart-total-qty {font-size:19px;}
+  .basket-status-ribbon .view-basket-btn {min-height:40px;padding:9px 14px;}
+}

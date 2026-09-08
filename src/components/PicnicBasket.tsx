@@ -1,5 +1,5 @@
 import React from 'react'
-import { ShoppingBasket, ArrowUpRight } from 'lucide-react'
+import { ShoppingBag, ArrowRight } from 'lucide-react'
 import { FruitItem } from '../data/fruits'
 import { getBasketLayout } from '../utils/basketLayout'
 import { StringLights } from './StringLights'
@@ -12,6 +12,7 @@ interface BasketItem {
 
 interface PicnicBasketProps {
   items: BasketItem[]
+  totalPrice: number
   isBouncing: boolean
   basketTargetRef: React.RefObject<HTMLDivElement>
   onOpenDrawer: () => void
@@ -19,6 +20,7 @@ interface PicnicBasketProps {
 
 export const PicnicBasket: React.FC<PicnicBasketProps> = ({
   items,
+  totalPrice,
   isBouncing,
   basketTargetRef,
   onOpenDrawer
@@ -79,22 +81,29 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
         </div>
 
         {totalCount > visualFruits.length && (
-          <p className="basket-preview-note">ภาพจัดวางตัวอย่าง · ดูครบ {totalCount} รายการในตะกร้า</p>
+          <p className="basket-preview-note">ภาพจัดวางตัวอย่าง · แตะเพื่อดูรายการทั้งหมด</p>
         )}
 
-        {/* Status Ribbon */}
+        {/* Single summary row: count, total and the way into the basket */}
         <div className="basket-status-ribbon">
-          <div className="basket-status-label">
-            <ShoppingBasket size={16} color="currentColor" />
-            <span>ตะกร้าของคุณ</span>
-            <span className="basket-count-badge">
-              {totalCount > 0 ? `${totalCount} รายการ` : 'ยังไม่มีผลไม้'}
+          <div className="floating-cart-info">
+            <span className="cart-item-count">
+              {totalCount > 0 ? `${totalCount} รายการในตะกร้า` : 'เลือกผลไม้ใส่ตะกร้าได้เลย'}
             </span>
+            <span className="cart-total-qty">฿{totalPrice.toLocaleString()}</span>
           </div>
 
-          <div className="basket-tap-hint">
-            <ArrowUpRight size={18} />
-          </div>
+          <button
+            className="view-basket-btn"
+            disabled={totalCount === 0}
+            onClick={e => {
+              e.stopPropagation()
+              onOpenDrawer()
+            }}
+          >
+            <ShoppingBag size={17} />
+            <span>ดูตะกร้า</span><ArrowRight size={16} />
+          </button>
         </div>
       </div>
 

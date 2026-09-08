@@ -7,7 +7,6 @@ import { BasketDrawer } from './components/BasketDrawer'
 import { CheckoutModal } from './components/CheckoutModal'
 import { FRUIT_CATALOG, FruitItem } from './data/fruits'
 import { soundManager } from './utils/audio'
-import { ShoppingBag, ArrowRight } from 'lucide-react'
 
 
 export interface BasketItem {
@@ -118,7 +117,16 @@ export function App() {
         />
 
         <div className="experience-layout">
-          <PicnicBasket items={basketItems} isBouncing={isBouncing} basketTargetRef={basketTargetRef} onOpenDrawer={() => setIsDrawerOpen(true)} />
+          <PicnicBasket
+            items={basketItems}
+            totalPrice={totalPrice}
+            isBouncing={isBouncing}
+            basketTargetRef={basketTargetRef}
+            onOpenDrawer={() => {
+              soundManager.playWoodClick()
+              setIsDrawerOpen(true)
+            }}
+          />
 
 
         </div>
@@ -130,29 +138,6 @@ export function App() {
           onDropComplete={handleDropComplete}
         />
 
-        {/* Bottom Floating Bar */}
-        {(
-          <aside className="floating-bottom-bar">
-            <div className="floating-cart-info">
-              <span className="cart-item-count">{totalCount > 0 ? `${totalCount} รายการในตะกร้า` : 'เลือกผลไม้ใส่ตะกร้าได้เลย'}</span>
-              <span className="cart-total-qty">฿{totalPrice.toLocaleString()}</span>
-            </div>
-
-            <button
-              className="view-basket-btn"
-              disabled={totalCount === 0}
-              onClick={() => {
-                soundManager.playWoodClick()
-                setIsDrawerOpen(true)
-              }}
-            >
-              <ShoppingBag size={17} />
-              <span>ดูตะกร้า</span><ArrowRight size={16} />
-            </button>
-          </aside>
-        )}
-
-        {/* Fruits Shelf */}
         <FruitShelf
           fruits={FRUIT_CATALOG}
           basketQuantities={basketQuantities}
