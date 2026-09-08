@@ -1,3 +1,5 @@
+> Archived design experiment. Removed from the current website on 8 September 2026.
+
 # Classic and 3D picnic views
 
 Classic remains the default. Its PicnicBasket component and original image assets are unchanged.

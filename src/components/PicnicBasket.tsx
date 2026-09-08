@@ -26,7 +26,7 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
 
   return (
     <section className="basket-stage-wrapper">
-      <div className="stage-eyebrow"><span>01 / YOUR PICNIC</span><Leaf size={15} /></div>
+      <div className="stage-eyebrow"><span>ตะกร้าของฝาก</span><Leaf size={15} /></div>
       <div
         className={`basket-card ${isBouncing ? 'bounce' : ''}`}
         onClick={onOpenDrawer}
@@ -40,7 +40,7 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
           }
         }}
       >
-        <div className="basket-caption"><span>Made for your evening</span><span className="basket-edition">CMA<br />2026</span></div>
+        <div className="basket-caption"><span>หยิบได้เลย ตามใจชอบ</span></div>
         <div className="basket-inner-visual" ref={basketTargetRef}>
           <img
             src={`${import.meta.env.BASE_URL}assets/basket-open-v2.png`}
@@ -78,7 +78,7 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
         {/* Status Ribbon */}
         <div className="basket-status-ribbon">
           <div className="basket-status-label">
-            <ShoppingBasket size={16} color="#d4af37" />
+            <ShoppingBasket size={16} color="currentColor" />
             <span>ตะกร้าปิกนิกของคุณ</span>
             <span className="basket-count-badge">
               {totalCount > 0 ? `${totalCount} รายการ` : 'ยังไม่มีผลไม้'}
@@ -90,7 +90,7 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
           </div>
         </div>
       </div>
-      <p className="basket-footnote">ตะกร้าสาน พร้อมป้ายชื่อเฉพาะคุณ <span>Complimentary</span></p>
+      <p className="basket-footnote">ตะกร้าสานพร้อมป้ายชื่อ <span>เราเตรียมให้ฟรี</span></p>
     </section>
   )
 }

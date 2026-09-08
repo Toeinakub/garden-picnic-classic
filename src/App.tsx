@@ -1,4 +1,4 @@
-import React, { useState, useRef, lazy, Suspense } from 'react'
+import React, { useState, useRef } from 'react'
 import { Header } from './components/Header'
 import { PicnicBasket } from './components/PicnicBasket'
 import { FruitShelf } from './components/FruitShelf'
@@ -9,7 +9,8 @@ import { FRUIT_CATALOG, FruitItem } from './data/fruits'
 import { soundManager } from './utils/audio'
 import { ShoppingBag, Leaf, ArrowRight } from 'lucide-react'
 
-const PicnicBasket3D = lazy(() => import('./components/three/PicnicBasket3D'))
+import { StringLights } from './components/StringLights'
+import { GardenFoliage } from './components/GardenFoliage'
 
 export interface BasketItem {
   fruit: FruitItem
@@ -17,7 +18,6 @@ export interface BasketItem {
 }
 
 export function App() {
-  const [viewMode, setViewMode] = useState<'classic' | '3d'>('classic')
   const [basketItems, setBasketItems] = useState<BasketItem[]>([])
   const [monogramText, setMonogramText] = useState('')
   const [activeDrops, setActiveDrops] = useState<ActiveDrop[]>([])
@@ -57,7 +57,7 @@ export function App() {
       targetY
     }
 
-    if (viewMode === 'classic') setActiveDrops(prev => [...prev, newDrop])
+    setActiveDrops(prev => [...prev, newDrop])
 
     // Immediately update basket state
     setBasketItems(prev => {
@@ -107,7 +107,7 @@ export function App() {
     <div className="app-container">
       <main className="mobile-screen">
         {/* Subtle Ambient Fairy Lights */}
-        <div className="fairy-lights" />
+
 
         {/* Top Header */}
         <Header
@@ -119,44 +119,19 @@ export function App() {
           onReset={handleReset}
         />
 
-        {/* Event Banner */}
-        <section className="event-banner">
-          <div className="event-tagline"><span /> THE CMA SOUVENIR EXPERIENCE <span /></div>
-          <div className="event-date">GARDEN PICNIC NIGHT · 24 SEPTEMBER 2026</div>
-          <h2 className="event-headline">A little garden.<br /><em>To take home.</em></h2>
-          <p className="event-subtext">
-            เก็บความสุขจากค่ำคืนนี้ กลับบ้านไปกับคุณ<br />เลือกผลไม้ที่ชอบ จัดตะกร้าในแบบของคุณ
-          </p>
+        <section className="gathering-hero">
+          <GardenFoliage />
+          <StringLights />
+          <div className="gathering-caption"><span>กินด้วยกัน คุยด้วยกัน</span><strong>ความสุขง่าย ๆ ในสวน</strong></div>
+          <span className="hero-date">24 ก.ย. 2569</span>
         </section>
-
-        <div className="view-mode-tabs" role="tablist" aria-label="เลือกเวอร์ชันตะกร้า">
-          {(['classic', '3d'] as const).map(mode => (
-            <button key={mode} id={`tab-${mode}`} role="tab" aria-selected={viewMode===mode}
-              aria-controls="picnic-view" tabIndex={viewMode===mode ? 0 : -1}
-              onClick={()=>{setViewMode(mode);setActiveDrops([])}}
-              onKeyDown={e=>{
-                if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){
-                  e.preventDefault()
-                  const next=e.key==='Home'?'classic':e.key==='End'?'3d':viewMode==='classic'?'3d':'classic'
-                  setViewMode(next);setActiveDrops([])
-                  document.getElementById(`tab-${next}`)?.focus()
-                }
-              }}>
-              {mode==='classic' ? 'Classic · เวอร์ชันเดิม' : '3D · หมุนชมตะกร้า'}
-            </button>
-          ))}
-        </div>
-        <div className="experience-layout" id="picnic-view" role="tabpanel" aria-labelledby={`tab-${viewMode}`}>
-        {/* Picnic Basket Stage */}
-        {viewMode === 'classic' ? <PicnicBasket
-          items={basketItems}
-          isBouncing={isBouncing}
-          basketTargetRef={basketTargetRef}
-          onOpenDrawer={() => setIsDrawerOpen(true)}
-        /> : <Suspense fallback={<section className="basket-stage-wrapper"><div className="three-loading" role="status">กำลังเปิดสวนสามมิติ…</div></section>}>
-          <PicnicBasket3D items={basketItems} basketTargetRef={basketTargetRef}
-            onOpenDrawer={()=>setIsDrawerOpen(true)} onSwitchClassic={()=>setViewMode('classic')} />
-        </Suspense>}
+        <section className="event-banner">
+          <div className="event-tagline">ของฝากจากค่ำคืนที่เราได้มาเจอกัน</div>
+          <h2 className="event-headline">ก่อนกลับ…<br className="mobile-break" /> หยิบความอร่อยติดมือไปด้วย</h2>
+          <p className="event-subtext">เลือกผลไม้ที่ชอบ ใส่ตะกร้ากลับบ้าน<br />จะเก็บไว้กินเอง หรือเอาไปฝากคนที่บ้านก็ได้</p>
+        </section>
+        <div className="experience-layout">
+          <PicnicBasket items={basketItems} isBouncing={isBouncing} basketTargetRef={basketTargetRef} onOpenDrawer={() => setIsDrawerOpen(true)} />
 
         {/* Fruits Shelf */}
         <FruitShelf
@@ -166,7 +141,7 @@ export function App() {
         />
 
         </div>
-        <footer className="experience-footer"><Leaf size={14} /><span>Thoughtfully picked. Beautifully packed.</span><span className="footer-note">ด้วยความใส่ใจ จาก วตท.</span></footer>
+        <footer className="experience-footer"><Leaf size={14} /><span>อิ่มท้อง อิ่มใจ แล้วเจอกันในสวน</span><span className="footer-note">Garden Picnic Night · 24.09.2026</span></footer>
 
         {/* Parabolic Dropping Animation Overlay */}
         <DropEffect

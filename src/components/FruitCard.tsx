@@ -65,7 +65,7 @@ export const FruitCard: React.FC<FruitCardProps> = ({
         <p className="fruit-name-en">{fruit.name}</p>
 
         <div className="fruit-origin-row">
-          <MapPin size={10} color="#d4af37" />
+          <MapPin size={10} color="currentColor" />
           <span>{fruit.origin}</span>
         </div>
 
@@ -78,7 +78,7 @@ export const FruitCard: React.FC<FruitCardProps> = ({
             aria-label={`หยิบ ${fruit.thaiName} ใส่ตะกร้า`}
           >
             <Plus size={14} />
-            <span>{quantityInBasket > 0 ? 'เพิ่มอีก' : 'เลือก'}</span>
+            <span>{quantityInBasket > 0 ? 'เพิ่มอีก' : 'หยิบใส่ตะกร้า'}</span>
           </button>
         </div>
       </div>

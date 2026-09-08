@@ -1,0 +1,124 @@
+:root {
+  --garden-ink:#304638; --garden-muted:#65715e; --garden-accent:#127873;
+  --cma-cream:var(--garden-ink); --cma-cream-muted:var(--garden-muted);
+  --cma-gold:var(--garden-accent); --cma-gold-bright:var(--garden-accent);
+  --border-gold:#d3d6c4; --border-gold-subtle:#dddcca;
+  --font-serif:var(--font-sans);
+}
+body {background:#f6f0e4;color:var(--garden-ink);}
+.app-container {background:radial-gradient(ellipse at 0 30%,#dce4c04d,transparent 50%),#f6f0e4;padding:0 36px;}
+.mobile-screen {max-width:1160px;}
+.header-bar {padding:22px 0;border-bottom:0;}
+.brand-title-group h1 {font-family:var(--font-sans);font-size:23px;font-weight:500;letter-spacing:-.6px;}
+.header-edition {font-size:13px;letter-spacing:0;color:#697461;}
+.icon-btn {color:#466348;background:#fffcf5;border-color:#d5d9c8;}
+.icon-btn:hover {background:#e7eddb;}
+.gathering-hero {height:220px;position:relative;isolation:isolate;border-radius:18px;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#5a694330,transparent 65%),#2a4434;}
+.garden-foliage {position:absolute;top:0;width:clamp(85px, 17%, 180px);height:100%;opacity:.8;pointer-events:none;}
+.garden-foliage-left {left:-10px;}
+.garden-foliage-right {right:-10px;transform:scaleX(-1);}
+.gathering-caption {position:absolute;bottom:27px;left:30px;right:30px;text-align:center;align-items:center;z-index:1;color:#fffaf0;display:flex;flex-direction:column;gap:4px;}
+.gathering-caption span {font-size:15px;}
+.gathering-caption strong {font-size:29px;font-weight:500;}
+.hero-date {position:absolute;right:24px;bottom:24px;z-index:1;background:#f4ecd9;color:#384b36;padding:10px 17px;border-radius:5px;transform:rotate(3deg);font-size:14px;}
+.string-lights {position:absolute;top:0;left:0;width:100%;height:160px;z-index:2;pointer-events:none;}
+.light-pendant {animation:lightSway 6s ease-in-out infinite alternate;}
+@keyframes lightSway {from {transform:rotate(-2deg)}to {transform:rotate(2deg)}}
+.event-banner {padding:36px 0;text-align:center;}
+.event-tagline {color:#58754c;font-size:13px;letter-spacing:0;}
+.event-headline {font-family:var(--font-sans);font-size:34px;font-weight:500;letter-spacing:-.8px;line-height:1.55;margin:8px 0;}
+.mobile-break {display:none;}
+.event-subtext {font-size:16px;font-weight:400;line-height:1.85;margin:10px 0 0;}
+.experience-layout {grid-template-columns:.9fr 1.1fr;gap:38px;}
+.stage-eyebrow,.section-eyebrow {font-size:13px;letter-spacing:0;color:#5e764b;}
+.stage-eyebrow {margin:0 2px 18px;}
+.basket-card {border:0;border-radius:13px;background:repeating-linear-gradient(0deg,#ffffff0b 0 2px,transparent 2px 9px),repeating-linear-gradient(90deg,#a472421a 0 1px,transparent 1px 108px),linear-gradient(110deg,#e7c79e,#f0d7b4 50%,#dcbc96);padding:23px 20px 18px;box-shadow:0 5px 0 #cbb18e55;backdrop-filter:none;}
+.basket-card::before {content:"";position:absolute;width:78%;height:57%;left:11%;bottom:17%;background:repeating-linear-gradient(0deg,#f8f1df99 0 17px,#d0a77c24 17px 34px),repeating-linear-gradient(90deg,#fff9e2bb 0 17px,#dac3a433 17px 34px);transform:rotate(-7deg);border:1px solid #fdf6e5;box-shadow:0 5px 12px #71553014;pointer-events:none;}
+.basket-caption {height:auto;position:relative;z-index:1;}
+.basket-caption > span:first-child {font-family:var(--font-sans);font-style:normal;font-size:16px;color:#655039;background:#fff9e6;padding:8px 17px;transform:rotate(-3deg);box-shadow:1px 2px 0 #95795633;}
+.basket-inner-visual {margin-top:18px;width:min(100%,340px);}
+.basket-bg-img {filter:drop-shadow(0 13px 12px #6542203d);}
+.basket-ground {background:#72533142;}
+.basket-status-ribbon {position:relative;z-index:1;border-color:#a8875a55;padding-top:16px;}
+.basket-status-label {font-size:15px;color:#493f2b;}
+.basket-count-badge {background:#faf4e4;color:#486640;font-size:12px;}
+.basket-tap-hint {color:#4e6c40;}
+.basket-preview-note {position:relative;color:#544b36;}
+.basket-footnote {font-size:13px;flex-wrap:wrap;gap:4px 10px;}
+.basket-footnote span {font:500 13px var(--font-sans);color:#527045;}
+.shelf-title-group h2 {font-size:25px;font-weight:500;margin-top:5px;}
+.shelf-title-group p {font-size:14px;line-height:1.7;}
+.fruits-grid {gap:14px;}
+.fruit-card {background:#fffcf5;border-color:#dadfcb;border-radius:12px;box-shadow:0 3px 0 #dfdfcc55;}
+.fruit-card:hover {background:#fffef9;border-color:#789b6c;}
+.fruit-card.in-basket {background:#f2f6e8;border-color:#74965c;}
+.fruit-img-box {height:133px;background:radial-gradient(ellipse,#ececcb88,transparent 70%);}
+.fruit-img-box img {filter:drop-shadow(0 8px 6px #6a663d26);}
+.fruit-card-count-badge {background:#137b73;color:#fff;}
+.fruit-info {padding:0 13px 14px;}
+.fruit-badge-tag {font-size:12px;letter-spacing:0;text-transform:none;color:#778246;}
+.fruit-name-thai {font-size:15px;font-weight:500;line-height:1.65;min-height:50px;}
+.fruit-name-en {font-family:var(--font-sans);font-style:normal;font-size:11px;color:#737764;line-height:1.6;min-height:36px;}
+.fruit-origin-row {font-size:11px;color:#64715c;min-height:36px;}
+.fruit-card-action {flex-wrap:wrap;border-color:#e1e1d1;gap:10px;}
+.fruit-price {font-size:21px;font-weight:500;}
+.fruit-price small {font-size:11px;max-width:none;font-weight:400;}
+.add-basket-btn {width:100%;height:40px;border-radius:7px;background:#167b75;border:0;color:#fff;font-size:13px;gap:5px;}
+.add-basket-btn span {display:inline;}
+.experience-footer {font-family:var(--font-sans);font-style:normal;font-size:14px;color:#526e42;}
+.footer-note {font-size:11px;color:#697461;}
+.floating-bottom-bar {background:#fffdf3f2;border-color:#cbd6bb;box-shadow:0 8px 25px #405c2820;}
+.cart-total-qty {color:#254e3b;font-family:var(--font-sans);font-weight:500;}
+.view-basket-btn,.checkout-btn {background:#167b75;color:#fff;border-radius:9px;}
+.drawer-sheet {background:#faf6eb;border-color:#d3d6c4;color:var(--garden-ink);}
+.drawer-handle {background:#b2bea2;}
+.drawer-item-row {background:#f0f0df;border-color:#dce0ce;}
+.close-sheet-btn {background:#e8eddc;color:#425b3d;}
+.qty-btn {background:#fffdf3;color:#426540;border-color:#bac9a9;}
+.monogram-section {background:#f0eadb;border-color:#b8c4a5;}
+.monogram-label {color:#557140;}
+.monogram-input {background:#fffdf8;border-color:#cbd4be;color:#304638;}
+.monogram-input:focus {background:#fff;border-color:#167b75;}
+.ticket-card {background:#eef0de;border:2px dashed #9eb390;}
+.ticket-code {background:#e0e7d0;color:#304638;}
+.ticket-cma-header {font-family:var(--font-sans);font-weight:500;color:#487045;}
+@media(max-width:760px) {
+  .app-container {padding:0;}
+  .header-bar {padding:17px 0;margin:0 18px;}
+  .brand-title-group h1 {font-size:20px;letter-spacing:-.7px;}
+  .gathering-hero {margin:0 12px;height:215px;border-radius:12px;}
+  .gathering-caption {left:16px;bottom:25px;right:16px;}
+  .gathering-caption span {font-size:13px;}
+  .gathering-caption strong {font-size:25px;line-height:1.6;}
+  .hero-date {font-size:11px;right:12px;top:12px;bottom:auto;padding:7px 9px;}
+  .string-lights {height:104px;width:170%;left:-35%;}
+  .event-banner {padding:26px 20px 28px;}
+  .event-tagline {font-size:13px;letter-spacing:0;}
+  .event-headline {font-size:26px;line-height:1.6;letter-spacing:-.7px;}
+  .mobile-break {display:block;}
+  .event-subtext {font-size:15px;line-height:1.9;}
+  .experience-layout {gap:32px;}
+  .basket-stage-wrapper {padding:0 20px;}
+  .basket-card {padding:20px 16px 16px;border-radius:12px;}
+  .basket-caption > span:first-child {font-size:15px;}
+  .basket-inner-visual {width:min(100%,260px);}
+  .basket-footnote {font-size:13px;}
+  .basket-footnote span {font-size:13px;}
+  .shelf-header {padding:0 20px;gap:8px;}
+  .shelf-title-group h2 {font-size:24px;}
+  .shelf-title-group p {font-size:14px;}
+  .shelf-hint .icon-btn {width:36px;height:36px;}
+  .fruits-grid {padding:4px 20px 14px;scroll-padding-left:20px;scrollbar-color:#849869 transparent;}
+  .fruit-card {flex-basis:214px;}
+  .fruit-img-box {height:136px;}
+  .fruit-info {padding:0 15px 15px;}
+  .fruit-name-thai {font-size:16px;min-height:53px;}
+  .fruit-name-en {font-size:12px;min-height:39px;}
+  .fruit-origin-row {font-size:12px;min-height:41px;}
+  .fruit-price {font-size:22px;}
+  .fruit-price small {font-size:12px;}
+  .fruit-badge-tag {font-size:12px;}
+  .add-basket-btn {height:44px;font-size:14px;}
+  .experience-footer {margin:22px 20px 0;font-size:14px;}
+}
+@media(prefers-reduced-motion:reduce){.light-pendant{animation:none;}}

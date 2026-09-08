@@ -13,11 +13,11 @@ export const Header: React.FC<HeaderProps> = ({ isMuted, onToggleMute, onReset }
     <header className="header-bar">
       <div className="cma-brand">
         <div className="brand-title-group">
-          <h1>Garden Pinic Night</h1>
+          <h1>Garden Picnic Night</h1>
         </div>
       </div>
       <div className="header-actions">
-        <span className="header-edition">AN EVENING TO REMEMBER</span>
+        <span className="header-edition">กินอร่อย คุยเพลิน เจอกันในสวน</span>
         <button
           className="icon-btn"
           onClick={() => {

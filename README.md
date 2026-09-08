@@ -1,11 +1,12 @@
 # CMA Garden Picnic Night
 
-Interactive picnic basket prototype with Classic and Three.js 3D tabs.
+A friendly garden gathering and take-home fruit basket prototype.
 
 **Live demo:** https://toeinakub.github.io/garden-picnic-classic/
 
 Select from nine fruits, personalise a basket, and preview the checkout and collection token.
-Both tabs share the same cart. The 3D view loads only when selected.
+Features a cream-and-leaf-green theme, animated hanging string lights and a 2D wicker basket.
+The former 3D experiment has been removed; its source remains in Git history.
 
 This is a presentation prototype. Prices are illustrative. QR checkout simulates payment;
 it does not process or verify real transactions. Without Supabase configuration, simulated

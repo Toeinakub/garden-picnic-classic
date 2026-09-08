@@ -17,3 +17,7 @@ Use case: product-mockup. A single isolated arrangement of two deep purple mango
 ## public/assets/mandarin.png
 
 Use case: product-mockup. A single isolated arrangement of two fresh golden-orange mandarins, one with two small green leaves, and two peeled juicy orange segments in foreground. Photorealistic luxury fruit catalog cutout, soft warm studio light, slightly elevated front view, compact centered composition occupying 80 percent of square canvas. Genuinely transparent alpha background. No bowl, no packaging, no text, no ground, no painted checkerboard.
+
+## Social garden refresh — 8 September 2026
+
+The final direction uses UI elements only: SVG hanging string lights and foliage, a paper date tag, a wood-toned basket surface and a gingham cloth. No generated atmosphere photograph is used. The original basket and fruit PNGs are preserved. Lights respect reduced-motion settings. The 3D experiment has been removed; its source remains in Git history.

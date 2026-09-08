@@ -81,7 +81,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         particleCount: 70,
         spread: 60,
         origin: { y: 0.6 },
-        colors: ['#d4af37', '#eec95d', '#1a5937', '#f7f4eb', '#ffffff']
+        colors: ['#168582', '#e6ad52', '#5c7845', '#f7f4eb', '#ffffff']
       })
     }, 900)
   }
@@ -93,9 +93,9 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
         <div className="drawer-header">
           <div>
-            <h3>{step === 'pay' ? 'ชำระเงินผ่าน Thai QR' : 'บัตรรับของขวัญ VIP'}</h3>
-            <p style={{ fontSize: 'max(11.5px, var(--sheet-text-min, 0px))', color: '#d4af37' }}>
-              {step === 'pay' ? 'PromptPay Cashless Payment' : 'CMA Digital Picnic Token'}
+            <h3>{step === 'pay' ? 'ชำระเงินผ่าน Thai QR' : 'บัตรรับตะกร้าของคุณ'}</h3>
+            <p style={{ fontSize: 'max(11.5px, var(--sheet-text-min, 0px))', color: 'var(--garden-accent)' }}>
+              {step === 'pay' ? 'PromptPay Cashless Payment' : 'เก็บบัตรนี้ไว้รับของก่อนกลับ'}
             </p>
           </div>
           <button className="close-sheet-btn" onClick={onClose} aria-label="ปิด">
@@ -105,7 +105,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
         {step === 'pay' ? (
           <div style={{ textAlign: 'center', padding: '10px 0' }}>
-            <p style={{ fontSize: 'max(13px, var(--sheet-text-min, 0px))', color: '#aba28c' }}>
+            <p style={{ fontSize: 'max(13px, var(--sheet-text-min, 0px))', color: 'var(--garden-muted)' }}>
               สแกน QR Code ด้วยแอปพลิเคชันธนาคารเพื่อยืนยันรายการ
             </p>
 
@@ -121,11 +121,11 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             </div>
 
             <div style={{ margin: '12px 0 18px' }}>
-              <div style={{ fontSize: 'max(12px, var(--sheet-text-min, 0px))', color: '#aba28c' }}>ยอดชำระสุทธิ</div>
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '26px', fontWeight: 700, color: '#eec95d' }}>
+              <div style={{ fontSize: 'max(12px, var(--sheet-text-min, 0px))', color: 'var(--garden-muted)' }}>ยอดชำระสุทธิ</div>
+              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '26px', fontWeight: 700, color: 'var(--garden-accent)' }}>
                 ฿{totalPrice.toLocaleString()}
               </div>
-              <div style={{ fontSize: 'max(11px, var(--sheet-text-min, 0px))', color: '#a3b899', marginTop: '4px' }}>
+              <div style={{ fontSize: 'max(11px, var(--sheet-text-min, 0px))', color: 'var(--garden-muted)', marginTop: '4px' }}>
                 Ref: {orderRef}
               </div>
             </div>
@@ -148,32 +148,32 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         ) : (
           <div style={{ padding: '6px 0', textAlign: 'center' }}>
             <div style={{ display: 'inline-flex', padding: '10px', background: 'rgba(212, 175, 55, 0.15)', borderRadius: '50%', marginBottom: '8px' }}>
-              <ShieldCheck size={36} color="#eec95d" />
+              <ShieldCheck size={36} color="var(--garden-accent)" />
             </div>
 
-            <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', color: '#f8f5ee', marginBottom: '4px' }}>
+            <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', color: 'var(--garden-ink)', marginBottom: '4px' }}>
               จัดตะกร้าผลไม้สำเร็จแล้ว
             </h4>
-            <p style={{ fontSize: 'max(12px, var(--sheet-text-min, 0px))', color: '#aba28c', marginBottom: '14px' }}>
+            <p style={{ fontSize: 'max(12px, var(--sheet-text-min, 0px))', color: 'var(--garden-muted)', marginBottom: '14px' }}>
               ข้อมูลบันทึกในระบบเรียบร้อย พร้อมจัดเตรียมสำหรับค่ำคืนปิกนิก
             </p>
 
             {/* VIP Ticket Card */}
             <div className="ticket-card">
-              <div className="ticket-cma-header">CMA BACK TO BASIC</div>
-              <div style={{ fontSize: 'max(11px, var(--sheet-text-min, 0px))', color: '#a3b899', letterSpacing: '1px' }}>
+              <div className="ticket-cma-header">GARDEN PICNIC NIGHT</div>
+              <div style={{ fontSize: 'max(11px, var(--sheet-text-min, 0px))', color: 'var(--garden-muted)', letterSpacing: '1px' }}>
                 GARDEN PICNIC NIGHT • 24 SEP 2026
               </div>
 
               <div className="ticket-code">{orderRef}</div>
 
               {monogramText.trim() && (
-                <div style={{ fontSize: 'max(13px, var(--sheet-text-min, 0px))', color: '#eec95d', fontWeight: 600, margin: '6px 0' }}>
-                  🏷️ ป้ายสลัก: {monogramText.toUpperCase()}
+                <div style={{ fontSize: 'max(13px, var(--sheet-text-min, 0px))', color: 'var(--garden-accent)', fontWeight: 600, margin: '6px 0' }}>
+                  🏷️ ชื่อบนป้าย: {monogramText.toUpperCase()}
                 </div>
               )}
 
-              <div style={{ fontSize: 'max(11.5px, var(--sheet-text-min, 0px))', color: '#e8e2d2', margin: '8px 0', lineHeight: 1.5 }}>
+              <div style={{ fontSize: 'max(11.5px, var(--sheet-text-min, 0px))', color: 'var(--garden-ink)', margin: '8px 0', lineHeight: 1.5 }}>
                 {items.map(i => `${i.fruit.thaiName} (x${i.quantity})`).join(', ')}
               </div>
 
@@ -182,7 +182,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 paddingTop: '8px',
                 borderTop: '1px solid rgba(212, 175, 55, 0.2)',
                 fontSize: 'max(11px, var(--sheet-text-min, 0px))',
-                color: '#aba28c'
+                color: 'var(--garden-muted)'
               }}>
                 📍 นำรหัสนี้มารับตะกร้า ณ จุด <strong>"The Garden Pantry"</strong> เวลา 22.00 น.
               </div>

@@ -19,9 +19,9 @@ export const FruitShelf: React.FC<FruitShelfProps> = ({
     <section className="fruits-section">
       <div className="shelf-header">
         <div className="shelf-title-group">
-          <span className="section-eyebrow">02 / THE GARDEN SELECTION</span>
-          <h2>คัดสรรจากสวน…เพื่อคุณ</h2>
-          <p>ผลไม้พรีเมียม {fruits.length} ชนิด · แตะเพื่อเติมความอร่อย</p>
+          <span className="section-eyebrow">สด ๆ จากสวน</span>
+          <h2>วันนี้มีอะไรให้หยิบบ้าง</h2>
+          <p>ผลไม้ {fruits.length} อย่าง · เลือกของอร่อยกลับบ้าน</p>
         </div>
         <div className="shelf-hint">
           <button className="icon-btn" aria-label="ผลไม้ก่อนหน้า" onClick={() => shelfRef.current?.scrollBy({ left: -205, behavior: 'smooth' })}><ArrowLeft size={16} /></button>
