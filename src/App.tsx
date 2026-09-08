@@ -7,10 +7,8 @@ import { BasketDrawer } from './components/BasketDrawer'
 import { CheckoutModal } from './components/CheckoutModal'
 import { FRUIT_CATALOG, FruitItem } from './data/fruits'
 import { soundManager } from './utils/audio'
-import { ShoppingBag, Leaf, ArrowRight } from 'lucide-react'
+import { ShoppingBag, ArrowRight } from 'lucide-react'
 
-import { StringLights } from './components/StringLights'
-import { GardenFoliage } from './components/GardenFoliage'
 
 export interface BasketItem {
   fruit: FruitItem
@@ -119,29 +117,12 @@ export function App() {
           onReset={handleReset}
         />
 
-        <section className="gathering-hero">
-          <GardenFoliage />
-          <StringLights />
-          <div className="gathering-caption"><span>กินด้วยกัน คุยด้วยกัน</span><strong>ความสุขง่าย ๆ ในสวน</strong></div>
-          <span className="hero-date">24 ก.ย. 2569</span>
-        </section>
-        <section className="event-banner">
-          <div className="event-tagline">ของฝากจากค่ำคืนที่เราได้มาเจอกัน</div>
-          <h2 className="event-headline">ก่อนกลับ…<br className="mobile-break" /> หยิบความอร่อยติดมือไปด้วย</h2>
-          <p className="event-subtext">เลือกผลไม้ที่ชอบ ใส่ตะกร้ากลับบ้าน<br />จะเก็บไว้กินเอง หรือเอาไปฝากคนที่บ้านก็ได้</p>
-        </section>
         <div className="experience-layout">
           <PicnicBasket items={basketItems} isBouncing={isBouncing} basketTargetRef={basketTargetRef} onOpenDrawer={() => setIsDrawerOpen(true)} />
 
-        {/* Fruits Shelf */}
-        <FruitShelf
-          fruits={FRUIT_CATALOG}
-          basketQuantities={basketQuantities}
-          onAddToCart={handleAddToCart}
-        />
 
         </div>
-        <footer className="experience-footer"><Leaf size={14} /><span>อิ่มท้อง อิ่มใจ แล้วเจอกันในสวน</span><span className="footer-note">Garden Picnic Night · 24.09.2026</span></footer>
+
 
         {/* Parabolic Dropping Animation Overlay */}
         <DropEffect
@@ -150,25 +131,34 @@ export function App() {
         />
 
         {/* Bottom Floating Bar */}
-        {totalCount > 0 && (
+        {(
           <aside className="floating-bottom-bar">
             <div className="floating-cart-info">
-              <span className="cart-item-count">ตะกร้าของคุณ · {totalCount} รายการ</span>
+              <span className="cart-item-count">{totalCount > 0 ? `${totalCount} รายการในตะกร้า` : 'เลือกผลไม้ใส่ตะกร้าได้เลย'}</span>
               <span className="cart-total-qty">฿{totalPrice.toLocaleString()}</span>
             </div>
 
             <button
               className="view-basket-btn"
+              disabled={totalCount === 0}
               onClick={() => {
                 soundManager.playWoodClick()
                 setIsDrawerOpen(true)
               }}
             >
               <ShoppingBag size={17} />
-              <span>ดูตะกร้าและชำระเงิน</span><ArrowRight size={16} />
+              <span>ดูตะกร้า</span><ArrowRight size={16} />
             </button>
           </aside>
         )}
+
+        {/* Fruits Shelf */}
+        <FruitShelf
+          fruits={FRUIT_CATALOG}
+          basketQuantities={basketQuantities}
+          onAddToCart={handleAddToCart}
+        />
+
 
         {/* Basket Drawer (Review & Personalization) */}
         <BasketDrawer

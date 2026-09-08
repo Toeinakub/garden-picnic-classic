@@ -1,0 +1,115 @@
+/* One workbench: basket, all nine choices and checkout stay together. */
+.app-container {padding:0 20px;}
+.mobile-screen {width:100%;max-width:960px;padding-bottom:16px;}
+.header-bar {padding:16px 0;}
+.header-edition {display:none;}
+.experience-layout {gap:18px;align-items:stretch;grid-template-columns:1fr 1fr;}
+.basket-stage-wrapper {position:relative;top:auto;padding:0;border-radius:15px;overflow:hidden;isolation:isolate;background:linear-gradient(#2e4837 0 60%,#e2c6a1 60%);display:flex;flex-direction:column;}
+.basket-stage-wrapper>.string-lights {height:95px;width:140%;left:-20%;top:-8px;}
+.basket-stage-wrapper>.garden-foliage {height:200px;width:100px;opacity:.6;}
+.compact-invitation {position:relative;z-index:1;text-align:center;color:#fff5df;margin:74px 12px 0;}
+.compact-invitation h2 {font-size:21px;font-weight:500;line-height:1.4;}
+.compact-invitation>span {font-size:12px;color:#e0e6cf;display:block;margin-top:4px;}
+.basket-stage-wrapper .basket-card {padding:0 14px 12px;background:none;border:0;box-shadow:none;overflow:visible;border-radius:0;flex:1;display:flex;flex-direction:column;}
+.basket-card::before {width:76%;left:12%;bottom:45px;height:31%;z-index:-1;}
+.basket-inner-visual {width:260px;max-width:100%;margin:6px auto 0;}
+.basket-status-ribbon {margin-top:auto;padding-top:7px;min-height:35px;gap:4px;}
+.basket-status-label {font-size:14px;gap:6px;}
+.basket-count-badge {font-size:11px;padding:3px 7px;}
+.basket-preview-note {font-size:11px;line-height:1.5;margin:0;text-align:center;}
+.fruits-section {min-width:0;padding:12px;background:#f2eddf;border-radius:15px;}
+.shelf-header {padding:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:8px;margin-bottom:10px;}
+.shelf-header h2 {font-size:18px;font-weight:500;}
+.shelf-header>span {font-size:12px;color:#65715e;}
+.fruits-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:0;overflow:visible;}
+.fruit-choice {min-width:0;position:relative;display:grid;grid-template-columns:1fr;justify-items:center;align-content:center;gap:3px;min-height:112px;border:1px solid #d7ddc7;border-radius:10px;background:#fffdf5;color:#304638;padding:8px 3px;transition:background .15s,border-color .15s;}
+.fruit-choice:hover {background:#f2f6e5;border-color:#91a97a;}
+.fruit-choice.in-basket {background:#eaf1dc;border-color:#6c9151;}
+.fruit-choice img {width:48px;height:46px;object-fit:contain;filter:drop-shadow(0 3px 3px #604a2026);}
+.choice-name {font-size:14px;font-weight:500;line-height:1.4;white-space:nowrap;}
+.choice-price {font-size:13px;line-height:1.3;color:#127873;}
+.choice-count {position:absolute;right:5px;top:5px;min-width:19px;height:19px;padding:0 3px;border-radius:50%;background:#e9eedf;color:#527144;font-size:11px;display:flex;align-items:center;justify-content:center;}
+.in-basket .choice-count {background:#167b75;color:white;}
+.floating-bottom-bar {position:relative;bottom:auto;width:100%;max-width:100%;margin:12px 0 0;padding:10px 14px;flex-wrap:nowrap;gap:8px;}
+.floating-cart-info {flex:1;min-width:0;}
+.cart-item-count {font-size:12px;}
+.cart-total-qty {font-size:24px;line-height:1.3;}
+.view-basket-btn {flex:0 0 auto;min-height:44px;padding:11px 18px;font-size:14px;}
+.view-basket-btn:disabled {background:#d4dfcb;color:#64745c;cursor:default;}
+@media(max-width:760px) {
+  .app-container {padding:0 10px;}
+  .mobile-screen {max-width:520px;padding-bottom:max(8px,env(safe-area-inset-bottom));}
+  .header-bar {margin:0 3px;padding:10px 0;min-height:52px;}
+  .brand-title-group h1 {font-size:19px;letter-spacing:-.6px;}
+  .header-actions .icon-btn {width:34px;height:34px;}
+  .experience-layout {display:flex;flex-direction:column;gap:8px;}
+  .basket-stage-wrapper {width:100%;padding:0;border-radius:12px;}
+  .compact-invitation {margin-top:49px;}
+  .compact-invitation h2 {font-size:19px;}
+  .compact-invitation>span {font-size:11px;margin-top:2px;}
+  .basket-stage-wrapper>.string-lights {height:76px;top:-17px;}
+  .basket-stage-wrapper>.garden-foliage {height:140px;width:74px;}
+  .basket-stage-wrapper .basket-card {padding:0 11px 8px;}
+  .basket-inner-visual {width:clamp(120px,calc(100dvh - 505px),230px);margin:0 auto;}
+  .basket-status-ribbon {min-height:30px;padding-top:4px;}
+  .basket-status-label {font-size:13px;}
+  .basket-preview-note {font-size:10px;}
+  .fruits-section {padding:8px;border-radius:12px;}
+  .shelf-header {margin-bottom:6px;}
+  .shelf-header h2 {font-size:16px;}
+  .shelf-header>span {font-size:11px;}
+  .fruits-grid {gap:6px;}
+  .fruit-choice {min-height:clamp(64px,10dvh,84px);padding:4px 2px;gap:1px;}
+  .fruit-choice img {width:36px;height:clamp(26px,4dvh,34px);}
+  .choice-name {font-size:14px;line-height:1.4;}
+  .choice-price {font-size:12px;line-height:1.3;}
+  .choice-count {top:4px;right:4px;min-width:17px;height:17px;font-size:10px;}
+  .floating-bottom-bar {margin-top:8px;padding:7px 10px;border-radius:11px;}
+  .cart-item-count {font-size:11px;}
+  .cart-total-qty {font-size:22px;}
+}
+@media(max-width:350px) {
+  .brand-title-group h1 {font-size:17px;}
+  .header-actions {gap:4px;}
+  .header-actions .icon-btn {width:31px;height:31px;}
+  .choice-name {font-size:13px;}
+  .compact-invitation h2 {font-size:18px;}
+}
+
+/* Bottom-docked carousel; the basket occupies the remaining viewport. */
+.app-container {padding:0;min-height:100dvh;}
+.mobile-screen {max-width:740px;height:100dvh;min-height:480px;display:flex;flex-direction:column;padding:0;}
+.header-bar {flex-shrink:0;margin:0 14px;padding:10px 0;min-height:52px;}
+.experience-layout {display:flex;flex-direction:column;flex:1;min-height:0;margin:0 10px;gap:0;}
+.basket-stage-wrapper {flex:1;min-height:0;}
+.compact-invitation {margin-top:49px;flex-shrink:0;}
+.basket-stage-wrapper>.string-lights {height:76px;top:-17px;}
+.basket-stage-wrapper .basket-card {min-height:0;padding:0 12px 8px;}
+.basket-visual-space {flex:1;min-height:0;display:flex;justify-content:center;align-items:center;}
+.basket-inner-visual {height:100%;width:auto;aspect-ratio:1;max-width:100%;max-height:360px;margin:0;flex-shrink:1;}
+.basket-status-ribbon {flex-shrink:0;margin-top:2px;padding-top:5px;min-height:30px;}
+.basket-preview-note {flex-shrink:0;}
+.floating-bottom-bar {flex-shrink:0;margin:8px 10px;width:calc(100% - 20px);padding:7px 12px;box-shadow:none;}
+.fruits-section {flex-shrink:0;width:100%;border-radius:14px 14px 0 0;border-top:1px solid #d5dcc6;background:#eee9d9;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));}
+.shelf-header {padding:0 14px;margin:0 0 7px;min-height:28px;gap:8px;}
+.shelf-header h2 {font-size:15px;}
+.shelf-header>span {margin-left:auto;font-size:12px;}
+.carousel-controls {display:flex;gap:4px;}
+.carousel-controls button {width:28px;height:28px;border-radius:50%;border:1px solid #d1d9c3;background:#fffdf5;color:#526e42;display:grid;place-items:center;}
+.fruits-grid {display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;gap:7px;padding:0 12px 3px;scroll-snap-type:x mandatory;scroll-padding-inline:12px;overscroll-behavior-x:contain;scrollbar-width:none;}
+.fruits-grid::-webkit-scrollbar {display:none;}
+.fruit-choice {flex:0 0 108px;min-height:100px;padding:6px 4px;gap:2px;scroll-snap-align:start;}
+.fruit-choice img {width:44px;height:40px;}
+.choice-name {font-size:14px;}
+.choice-price {font-size:13px;}
+@media(max-height:650px) {
+  .compact-invitation {margin-top:40px;}
+  .compact-invitation h2 {font-size:17px;}
+  .compact-invitation>span {font-size:10px;}
+  .fruit-choice {min-height:88px;}
+  .fruit-choice img {width:36px;height:32px;}
+  .basket-preview-note {font-size:10px;}
+}
+/* Preserve matching square coordinates for the basket rim and fruit layers. */
+.basket-visual-space {container-type:size;}
+.basket-inner-visual {width:min(100cqw,100cqh,360px);height:auto;aspect-ratio:1;}

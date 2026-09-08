@@ -1,7 +1,9 @@
 import React from 'react'
-import { ShoppingBasket, ArrowUpRight, Leaf } from 'lucide-react'
+import { ShoppingBasket, ArrowUpRight } from 'lucide-react'
 import { FruitItem } from '../data/fruits'
 import { getBasketLayout } from '../utils/basketLayout'
+import { StringLights } from './StringLights'
+import { GardenFoliage } from './GardenFoliage'
 
 interface BasketItem {
   fruit: FruitItem
@@ -26,7 +28,9 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
 
   return (
     <section className="basket-stage-wrapper">
-      <div className="stage-eyebrow"><span>ตะกร้าของฝาก</span><Leaf size={15} /></div>
+      <GardenFoliage />
+      <StringLights />
+      <div className="compact-invitation"><h2>หยิบความอร่อยกลับบ้าน</h2><span>24 ก.ย. 2569 · ตะกร้าพร้อมป้ายชื่อฟรี</span></div>
       <div
         className={`basket-card ${isBouncing ? 'bounce' : ''}`}
         onClick={onOpenDrawer}
@@ -40,7 +44,8 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
           }
         }}
       >
-        <div className="basket-caption"><span>หยิบได้เลย ตามใจชอบ</span></div>
+
+        <div className="basket-visual-space">
         <div className="basket-inner-visual" ref={basketTargetRef}>
           <img
             src={`${import.meta.env.BASE_URL}assets/basket-open-v2.png`}
@@ -71,6 +76,8 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
           <img src={`${import.meta.env.BASE_URL}assets/basket-open-v2.png`} alt="" aria-hidden="true" className="basket-front-img" />
         </div>
 
+        </div>
+
         {totalCount > visualFruits.length && (
           <p className="basket-preview-note">ภาพจัดวางตัวอย่าง · ดูครบ {totalCount} รายการในตะกร้า</p>
         )}
@@ -79,7 +86,7 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
         <div className="basket-status-ribbon">
           <div className="basket-status-label">
             <ShoppingBasket size={16} color="currentColor" />
-            <span>ตะกร้าปิกนิกของคุณ</span>
+            <span>ตะกร้าของคุณ</span>
             <span className="basket-count-badge">
               {totalCount > 0 ? `${totalCount} รายการ` : 'ยังไม่มีผลไม้'}
             </span>
@@ -90,7 +97,7 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
           </div>
         </div>
       </div>
-      <p className="basket-footnote">ตะกร้าสานพร้อมป้ายชื่อ <span>เราเตรียมให้ฟรี</span></p>
+
     </section>
   )
 }

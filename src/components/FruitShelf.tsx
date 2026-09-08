@@ -17,18 +17,7 @@ export const FruitShelf: React.FC<FruitShelfProps> = ({
   const shelfRef = useRef<HTMLDivElement>(null)
   return (
     <section className="fruits-section">
-      <div className="shelf-header">
-        <div className="shelf-title-group">
-          <span className="section-eyebrow">สด ๆ จากสวน</span>
-          <h2>วันนี้มีอะไรให้หยิบบ้าง</h2>
-          <p>ผลไม้ {fruits.length} อย่าง · เลือกของอร่อยกลับบ้าน</p>
-        </div>
-        <div className="shelf-hint">
-          <button className="icon-btn" aria-label="ผลไม้ก่อนหน้า" onClick={() => shelfRef.current?.scrollBy({ left: -205, behavior: 'smooth' })}><ArrowLeft size={16} /></button>
-          <button className="icon-btn" aria-label="ผลไม้ถัดไป" onClick={() => shelfRef.current?.scrollBy({ left: 205, behavior: 'smooth' })}><ArrowRight size={16} /></button>
-        </div>
-      </div>
-
+      <div className="shelf-header"><h2>เลือกผลไม้</h2><span>ปัดเลือก · แตะเพื่อเพิ่ม</span><div className="carousel-controls"><button aria-label="ผลไม้ก่อนหน้า" onClick={()=>shelfRef.current?.scrollBy({left:-240,behavior:'smooth'})}><ArrowLeft size={14}/></button><button aria-label="ผลไม้ถัดไป" onClick={()=>shelfRef.current?.scrollBy({left:240,behavior:'smooth'})}><ArrowRight size={14}/></button></div></div>
       <div className="fruits-grid" ref={shelfRef}>
         {fruits.map(fruit => (
           <FruitCard
