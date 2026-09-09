@@ -129,3 +129,13 @@
   .basket-status-ribbon .cart-total-qty {font-size:19px;}
   .basket-status-ribbon .view-basket-btn {min-height:40px;padding:9px 14px;}
 }
+
+/* Reference-inspired PNG wordmark, sized without moving the fruit dock. */
+.header-bar {margin:8px 10px;padding:6px 10px;gap:10px;background:#2e4837;border-radius:12px;}
+.cma-brand {flex:1;min-width:0;}
+.brand-title-group {width:100%;max-width:330px;}
+.brand-title-group h1 {margin:0;line-height:0;}
+.garden-logo {display:block;width:100%;height:auto;aspect-ratio:3 / 1;object-fit:contain;}
+.header-actions {flex-shrink:0;}
+.header-actions .icon-btn {background:#ffffff12;border-color:#fff3d238;color:#fff3d2;}
+.header-actions .icon-btn:hover {background:#ffffff24;}

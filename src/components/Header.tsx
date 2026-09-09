@@ -13,7 +13,15 @@ export const Header: React.FC<HeaderProps> = ({ isMuted, onToggleMute, onReset }
     <header className="header-bar">
       <div className="cma-brand">
         <div className="brand-title-group">
-          <h1>Garden Picnic Night</h1>
+          <h1>
+            <img
+              className="garden-logo"
+              src={`${import.meta.env.BASE_URL}assets/branding/garden-picnic-night-logo.png`}
+              alt="G4 Garden Picnic Night"
+              width={2172}
+              height={724}
+            />
+          </h1>
         </div>
       </div>
       <div className="header-actions">
