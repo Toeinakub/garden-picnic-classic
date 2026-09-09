@@ -8,45 +8,40 @@ interface HeaderProps {
   onReset: () => void
 }
 
-export const Header: React.FC<HeaderProps> = ({ isMuted, onToggleMute, onReset }) => {
-  return (
-    <header className="header-bar">
-      <div className="cma-brand">
-        <div className="brand-title-group">
-          <h1>
-            <img
-              className="garden-logo"
-              src={`${import.meta.env.BASE_URL}assets/branding/garden-picnic-night-logo.png`}
-              alt="G4 Garden Picnic Night"
-              width={2172}
-              height={724}
-            />
-          </h1>
-        </div>
-      </div>
-      <div className="header-actions">
-        <span className="header-edition">กินอร่อย คุยเพลิน เจอกันในสวน</span>
-        <button
-          className="icon-btn"
-          onClick={() => {
-            soundManager.playWoodClick()
-            onToggleMute()
-          }}
-          title={isMuted ? 'เปิดเสียงสัมผัส' : 'ปิดเสียง'}
-        >
-          {isMuted ? <VolumeX size={17} /> : <Volume2 size={17} />}
-        </button>
-        <button
-          className="icon-btn"
-          onClick={() => {
-            soundManager.playWoodClick()
-            onReset()
-          }}
-          title="จัดตะกร้าใหม่"
-        >
-          <RotateCcw size={16} />
-        </button>
-      </div>
-    </header>
-  )
-}
+export const Header: React.FC<HeaderProps> = ({ isMuted, onToggleMute, onReset }) => (
+  <>
+    <div className="basket-brand-row">
+      <img
+        className="garden-logo"
+        src={`${import.meta.env.BASE_URL}assets/branding/garden-picnic-night-logo-v2.png`}
+        alt="G4 Garden Picnic Night — Back to Basic"
+        width={2172}
+        height={724}
+      />
+    </div>
+    <div className="basket-utility-actions">
+      <button
+        className="icon-btn"
+        onClick={e => {
+          e.stopPropagation()
+          soundManager.playWoodClick()
+          onToggleMute()
+        }}
+        title={isMuted ? 'เปิดเสียงสัมผัส' : 'ปิดเสียง'}
+      >
+        {isMuted ? <VolumeX size={15} /> : <Volume2 size={15} />}
+      </button>
+      <button
+        className="icon-btn"
+        onClick={e => {
+          e.stopPropagation()
+          soundManager.playWoodClick()
+          onReset()
+        }}
+        title="จัดตะกร้าใหม่"
+      >
+        <RotateCcw size={14} />
+      </button>
+    </div>
+  </>
+)

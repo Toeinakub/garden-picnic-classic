@@ -4,6 +4,7 @@ import { FruitItem } from '../data/fruits'
 import { getBasketLayout } from '../utils/basketLayout'
 import { StringLights } from './StringLights'
 import { GardenFoliage } from './GardenFoliage'
+import { Header } from './Header'
 
 interface BasketItem {
   fruit: FruitItem
@@ -16,6 +17,9 @@ interface PicnicBasketProps {
   isBouncing: boolean
   basketTargetRef: React.RefObject<HTMLDivElement>
   onOpenDrawer: () => void
+  isMuted: boolean
+  onToggleMute: () => void
+  onReset: () => void
 }
 
 export const PicnicBasket: React.FC<PicnicBasketProps> = ({
@@ -23,7 +27,10 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
   totalPrice,
   isBouncing,
   basketTargetRef,
-  onOpenDrawer
+  onOpenDrawer,
+  isMuted,
+  onToggleMute,
+  onReset
 }) => {
   const totalCount = items.reduce((sum, item) => sum + item.quantity, 0)
   const visualFruits = getBasketLayout(items)
@@ -32,6 +39,7 @@ export const PicnicBasket: React.FC<PicnicBasketProps> = ({
     <section className="basket-stage-wrapper">
       <GardenFoliage />
       <StringLights />
+      <Header isMuted={isMuted} onToggleMute={onToggleMute} onReset={onReset} />
       <div className="compact-invitation"><h2>หยิบความอร่อยกลับบ้าน</h2><span>24 ก.ย. 2569 · ตะกร้าพร้อมป้ายชื่อฟรี</span></div>
       <div
         className={`basket-card ${isBouncing ? 'bounce' : ''}`}

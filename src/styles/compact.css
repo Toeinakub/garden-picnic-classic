@@ -1,8 +1,6 @@
 /* One workbench: basket, all nine choices and checkout stay together. */
 .app-container {padding:0 20px;}
 .mobile-screen {width:100%;max-width:960px;padding-bottom:16px;}
-.header-bar {padding:16px 0;}
-.header-edition {display:none;}
 .experience-layout {gap:18px;align-items:stretch;grid-template-columns:1fr 1fr;}
 .basket-stage-wrapper {position:relative;top:auto;padding:0;border-radius:15px;overflow:hidden;isolation:isolate;background:linear-gradient(#2e4837 0 60%,#e2c6a1 60%);display:flex;flex-direction:column;}
 .basket-stage-wrapper>.string-lights {height:95px;width:140%;left:-20%;top:-8px;}
@@ -39,9 +37,6 @@
 @media(max-width:760px) {
   .app-container {padding:0 10px;}
   .mobile-screen {max-width:520px;padding-bottom:max(8px,env(safe-area-inset-bottom));}
-  .header-bar {margin:0 3px;padding:10px 0;min-height:52px;}
-  .brand-title-group h1 {font-size:19px;letter-spacing:-.6px;}
-  .header-actions .icon-btn {width:34px;height:34px;}
   .experience-layout {display:flex;flex-direction:column;gap:8px;}
   .basket-stage-wrapper {width:100%;padding:0;border-radius:12px;}
   .compact-invitation {margin-top:49px;}
@@ -69,9 +64,6 @@
   .cart-total-qty {font-size:22px;}
 }
 @media(max-width:350px) {
-  .brand-title-group h1 {font-size:17px;}
-  .header-actions {gap:4px;}
-  .header-actions .icon-btn {width:31px;height:31px;}
   .choice-name {font-size:13px;}
   .compact-invitation h2 {font-size:18px;}
 }
@@ -79,10 +71,9 @@
 /* Bottom-docked carousel; the basket occupies the remaining viewport. */
 .app-container {padding:0;min-height:100dvh;}
 .mobile-screen {max-width:740px;height:100dvh;min-height:480px;display:flex;flex-direction:column;padding:0;}
-.header-bar {flex-shrink:0;margin:0 14px;padding:10px 0;min-height:52px;}
 .experience-layout {display:flex;flex-direction:column;flex:1;min-height:0;margin:0 10px;gap:0;}
 .basket-stage-wrapper {flex:1;min-height:0;}
-.compact-invitation {margin-top:49px;flex-shrink:0;}
+.compact-invitation {margin-top:10px;flex-shrink:0;}
 .basket-stage-wrapper>.string-lights {height:76px;top:-17px;}
 .basket-stage-wrapper .basket-card {min-height:0;padding:0 12px 8px;}
 .basket-visual-space {flex:1;min-height:0;display:flex;justify-content:center;align-items:center;}
@@ -103,7 +94,7 @@
 .choice-name {font-size:14px;}
 .choice-price {font-size:13px;}
 @media(max-height:650px) {
-  .compact-invitation {margin-top:40px;}
+  .compact-invitation {margin-top:6px;}
   .compact-invitation h2 {font-size:17px;}
   .compact-invitation>span {font-size:10px;}
   .fruit-choice {min-height:88px;}
@@ -130,12 +121,17 @@
   .basket-status-ribbon .view-basket-btn {min-height:40px;padding:9px 14px;}
 }
 
-/* Reference-inspired PNG wordmark, sized without moving the fruit dock. */
-.header-bar {margin:8px 10px;padding:6px 10px;gap:10px;background:#2e4837;border-radius:12px;}
-.cma-brand {flex:1;min-width:0;}
-.brand-title-group {width:100%;max-width:330px;}
-.brand-title-group h1 {margin:0;line-height:0;}
-.garden-logo {display:block;width:100%;height:auto;aspect-ratio:3 / 1;object-fit:contain;}
-.header-actions {flex-shrink:0;}
-.header-actions .icon-btn {background:#ffffff12;border-color:#fff3d238;color:#fff3d2;}
-.header-actions .icon-btn:hover {background:#ffffff24;}
+/* Wordmark and utility controls live inside the same basket card as the lights. */
+.basket-brand-row {position:relative;z-index:1;flex-shrink:0;display:flex;justify-content:center;margin-top:49px;padding:0 46px;}
+.basket-brand-row .garden-logo {display:block;width:100%;max-width:260px;height:auto;aspect-ratio:3 / 1;object-fit:contain;}
+.basket-utility-actions {position:absolute;top:8px;right:8px;z-index:2;display:flex;gap:5px;}
+.basket-utility-actions .icon-btn {width:30px;height:30px;background:#ffffff14;border:1px solid #fff3d238;color:#fff3d2;}
+.basket-utility-actions .icon-btn:hover {background:#ffffff26;}
+@media(max-width:420px) {
+  .shelf-header>span {display:none;}
+  .carousel-controls {margin-left:auto;}
+}
+@media(max-height:650px) {
+  .basket-brand-row {margin-top:40px;}
+  .basket-brand-row .garden-logo {max-width:210px;}
+}

@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import { Header } from './components/Header'
 import { PicnicBasket } from './components/PicnicBasket'
 import { FruitShelf } from './components/FruitShelf'
 import { DropEffect, ActiveDrop } from './components/DropEffect'
@@ -103,19 +102,6 @@ export function App() {
   return (
     <div className="app-container">
       <main className="mobile-screen">
-        {/* Subtle Ambient Fairy Lights */}
-
-
-        {/* Top Header */}
-        <Header
-          isMuted={isMuted}
-          onToggleMute={() => {
-            const muted = soundManager.toggleMute()
-            setIsMuted(muted)
-          }}
-          onReset={handleReset}
-        />
-
         <div className="experience-layout">
           <PicnicBasket
             items={basketItems}
@@ -126,9 +112,10 @@ export function App() {
               soundManager.playWoodClick()
               setIsDrawerOpen(true)
             }}
+            isMuted={isMuted}
+            onToggleMute={() => setIsMuted(soundManager.toggleMute())}
+            onReset={handleReset}
           />
-
-
         </div>
 
 
