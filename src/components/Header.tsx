@@ -13,10 +13,10 @@ export const Header: React.FC<HeaderProps> = ({ isMuted, onToggleMute, onReset }
     <div className="basket-brand-row">
       <img
         className="garden-logo"
-        src={`${import.meta.env.BASE_URL}assets/branding/garden-picnic-night-logo-v2.png`}
+        src={`${import.meta.env.BASE_URL}assets/branding/garden-picnic-night-logo-v3.png`}
         alt="G4 Garden Picnic Night — Back to Basic"
-        width={2172}
-        height={724}
+        width={1672}
+        height={941}
       />
     </div>
     <div className="basket-utility-actions">

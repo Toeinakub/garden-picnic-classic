@@ -71,8 +71,8 @@
 /* Bottom-docked carousel; the basket occupies the remaining viewport. */
 .app-container {padding:0;min-height:100dvh;}
 .mobile-screen {max-width:740px;height:100dvh;min-height:480px;display:flex;flex-direction:column;padding:0;}
-.experience-layout {display:flex;flex-direction:column;flex:1;min-height:0;margin:0 10px;gap:0;}
-.basket-stage-wrapper {flex:1;min-height:0;}
+.experience-layout {display:flex;flex-direction:column;flex:1;min-height:0;margin:0;gap:0;}
+.basket-stage-wrapper {flex:1;min-height:0;border-radius:0;}
 .compact-invitation {margin-top:10px;flex-shrink:0;}
 .basket-stage-wrapper>.string-lights {height:76px;top:-17px;}
 .basket-stage-wrapper .basket-card {min-height:0;padding:0 12px 8px;}
@@ -81,7 +81,7 @@
 .basket-status-ribbon {flex-shrink:0;margin-top:2px;padding-top:5px;min-height:30px;}
 .basket-preview-note {flex-shrink:0;}
 .floating-bottom-bar {flex-shrink:0;margin:8px 10px;width:calc(100% - 20px);padding:7px 12px;box-shadow:none;}
-.fruits-section {flex-shrink:0;width:100%;border-radius:14px 14px 0 0;border-top:1px solid #d5dcc6;background:#eee9d9;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));}
+.fruits-section {flex-shrink:0;width:100%;border-radius:0;border-top:1px solid #d5dcc6;background:#eee9d9;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));}
 .shelf-header {padding:0 14px;margin:0 0 7px;min-height:28px;gap:8px;}
 .shelf-header h2 {font-size:15px;}
 .shelf-header>span {margin-left:auto;font-size:12px;}
@@ -122,8 +122,8 @@
 }
 
 /* Wordmark and utility controls live inside the same basket card as the lights. */
-.basket-brand-row {position:relative;z-index:1;flex-shrink:0;display:flex;justify-content:center;margin-top:49px;padding:0 46px;}
-.basket-brand-row .garden-logo {display:block;width:100%;max-width:260px;height:auto;aspect-ratio:3 / 1;object-fit:contain;}
+.basket-brand-row {position:relative;z-index:1;flex-shrink:0;display:flex;justify-content:center;margin-top:38px;padding:0 30px;}
+.basket-brand-row .garden-logo {display:block;width:100%;max-width:338px;height:auto;aspect-ratio:1672 / 941;object-fit:contain;}
 .basket-utility-actions {position:absolute;top:8px;right:8px;z-index:2;display:flex;gap:5px;}
 .basket-utility-actions .icon-btn {width:30px;height:30px;background:#ffffff14;border:1px solid #fff3d238;color:#fff3d2;}
 .basket-utility-actions .icon-btn:hover {background:#ffffff26;}
@@ -132,6 +132,6 @@
   .carousel-controls {margin-left:auto;}
 }
 @media(max-height:650px) {
-  .basket-brand-row {margin-top:40px;}
-  .basket-brand-row .garden-logo {max-width:210px;}
+  .basket-brand-row {margin-top:30px;}
+  .basket-brand-row .garden-logo {max-width:273px;}
 }
